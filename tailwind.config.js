@@ -13,7 +13,8 @@ export default {
         secondary: "#33ccff",
         accent: "#ffffff",
         black: "#000000",
-        info:"#9C998E"
+        info:"#9C998E",
+        error:"#ef4444"
       },
     },
   },

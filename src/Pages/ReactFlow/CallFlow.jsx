@@ -10,7 +10,6 @@ import {
   MiniMap,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
-import { TextUpdaterNode } from "./TextUpdaterNode";
 
 const initialNodes = [
   {

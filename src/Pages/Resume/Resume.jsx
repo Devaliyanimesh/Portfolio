@@ -23,7 +23,7 @@ export default function Resume() {
       paragraph: 'Vivekananda Global University',
     },
     {
-      icon: <SchoolIcon className="text-red-500" fontSize="medium" />,
+      icon: <SchoolIcon className="text-error" fontSize="medium" />,
       title: 'HSC (2018–2020)',
       paragraph: 'K & M P Sarvajanik Vidhyalay',
     },

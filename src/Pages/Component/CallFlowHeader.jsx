@@ -16,7 +16,7 @@ export default function CallFlowHeader({
         {/* floating icon */}
         <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-10">
           <div
-            className="p-2 rounded-full border-8 border-white shadow-md flex items-center justify-center"
+            className="p-2 rounded-full border-[5px] border-white shadow-md flex items-center justify-center"
             style={{ backgroundColor: bgColor }}
           >
             {icon}
@@ -26,7 +26,7 @@ export default function CallFlowHeader({
         {/* header */}
         <div className="flex justify-between items-start border-b-[3px] pb-2">
           <div>
-            <h3 className="!text-lg font-bold">{title}</h3>
+            <h3 className="!text-base">{title}</h3>
             {subtitle && <p className="text-sm text-black/50">{subtitle}</p>}
           </div>
 

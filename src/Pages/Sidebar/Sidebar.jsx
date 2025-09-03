@@ -27,7 +27,7 @@ export default function Sidebar() {
 
     const personalDetails = [
         { icon: <PhoneIcon className="text-blue-500" />,label: "Phone",value: "+91 ( 7041 ) 541-797" },
-        { icon: <EmailIcon className="text-red-500" />,label: "Email",value: "devaliyanimesh61972@gmail.com" },
+        { icon: <EmailIcon className="text-error" />,label: "Email",value: "devaliyanimesh61972@gmail.com" },
         { icon: <LocationOnIcon className="text-green-600" />,label: "Location",value: "Surat, Gujarat" },
     ];
 

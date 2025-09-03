@@ -22,7 +22,7 @@ export default function Contact() {
 
     const data = [
         { icon: <PhoneIcon className="text-blue-500" />,title: "Phone Number",paragraph: "+91 ( 7041 ) 541-797" },
-        { icon: <EmailIcon className="text-red-500" />,title: "Email",paragraph: "devaliyanimesh61972@gmail.com" },
+        { icon: <EmailIcon className="text-error" />,title: "Email",paragraph: "devaliyanimesh61972@gmail.com" },
     ];
 
     const [formData,setFormData] = useState({
@@ -154,7 +154,7 @@ export default function Contact() {
                     <form onSubmit={handleSubmit} className="space-y-4" noValidate>
                         <div>
                             <label htmlFor="name" className="block font-medium">
-                                Name <span className="text-red-500 ml-1">*</span>
+                                Name <span className="text-error ml-1">*</span>
                             </label>
                             <input
                                 type="text"
@@ -171,7 +171,7 @@ export default function Contact() {
 
                         <div>
                             <label htmlFor="email" className="block font-medium">
-                                Email <span className="text-red-500 ml-1">*</span>
+                                Email <span className="text-error ml-1">*</span>
                             </label>
                             <input
                                 type="email"
@@ -203,7 +203,7 @@ export default function Contact() {
 
                         <div>
                             <label htmlFor="message" className="block font-medium">
-                                Message <span className="text-red-500 ml-1">*</span>
+                                Message <span className="text-error ml-1">*</span>
                             </label>
                             <textarea
                                 id="message"
