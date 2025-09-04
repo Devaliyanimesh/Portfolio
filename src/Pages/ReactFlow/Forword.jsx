@@ -58,17 +58,15 @@ export default function Forword() {
         Condition (if)
         <span className="text-error"> *</span>
       </h5>
-      <div className="border rounded-md p-[0.5rem] text-base flex gap-1">
+      <div className="border rounded-md p-[0.5rem] text-sm flex items-center flex-wrap gap-1">
         <span>The destination does not answer within</span>
-        <span className="inline-flex">
-          <Dropdown
-            label="select"
-            options={options}
-            onSelect={handleSelect}
-            className="!w-fit "
-          />
-        </span>
-        <span>the go to next step</span>
+        <Dropdown
+          label="select"
+          options={options}
+          onSelect={handleSelect}
+          className="!w-fit "
+        />
+        <span>the go to next step.</span>
       </div>
     </CallFlowHeader>
   );

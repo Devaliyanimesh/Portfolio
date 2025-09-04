@@ -5,6 +5,10 @@ import CallFlow from "./Pages/ReactFlow/CallFlow";
 import Recording from "./Pages/ReactFlow/Recording";
 import Greeting from "./Pages/ReactFlow/Greeting";
 import Forword from "./Pages/ReactFlow/Forword";
+import StartCallFlow from "./Pages/ReactFlow/StartCallFlow";
+import CallRecording from "./Pages/ReactFlow/CallRecording";
+import SimulCall from "./Pages/ReactFlow/SimulCall";
+
 
 
 // const JavascriptApp = React.lazy(() => import('JavascriptCode/code'));
@@ -23,7 +27,9 @@ export default function App() {
       </BrowserRouter> */}
 
    
-      <Forword/>
+      {/* <Forword/> */}
+<SimulCall/>
+
     </div>
   );
 }
