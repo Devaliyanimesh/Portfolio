@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 import {
   ReactFlow,
-  ReactFlowProvider,   // 👈 import this
+  ReactFlowProvider,
   applyNodeChanges,
   applyEdgeChanges,
   addEdge,
@@ -11,34 +11,33 @@ import {
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 
+import { CustomEdge } from "./Edges/CustomEdge";
+import Greeting from "./Nodes/Greeting";
+import Forword from "./Nodes/Forword";
+
+
 const initialNodes = [
   {
     id: "n1",
-    type: "textUpdater",
+    type: "Greeting",
     position: { x: 150, y: 100 },
     data: { value: "Node 1" },
-    draggable: false,
   },
   {
     id: "n2",
-    type: "textUpdater",
-    position: { x: 150, y: 200 },
+    type: "Forword",
+    position: { x: 150, y: 400 },
     data: { value: "Node 2" },
-    draggable: false,
-  },
-  {
-    id: "n3",
-    type: "textUpdater",
-    position: { x: 150, y: 300 },
-    data: { value: "Node 3" },
-    draggable: false,
   },
 ];
 
 const initialEdges = [
-  { id: "e1-2", source: "n1", target: "n2" },
-  { id: "e2-3", source: "n2", target: "n3" },
+  { id: "e1-2", source: "n1", target: "n2", type: "custom-edge" },
 ];
+
+const edgeTypes = {
+  "custom-edge": CustomEdge,
+};
 
 function FlowContent() {
   const [nodes, setNodes] = useState(initialNodes);
@@ -55,18 +54,20 @@ function FlowContent() {
   );
 
   const onConnect = useCallback(
-    (params) => setEdges((eds) => addEdge(params, eds)),
+    (params) => setEdges((eds) => addEdge({ ...params, type: "custom-edge" }, eds)),
     []
   );
 
   const nodeTypes = {
-    textUpdater: TextUpdaterNode,
+    Greeting,
+    Forword,
   };
 
   return (
     <ReactFlow
       nodes={nodes}
       edges={edges}
+      edgeTypes={edgeTypes}
       nodeTypes={nodeTypes}
       onNodesChange={onNodesChange}
       onEdgesChange={onEdgesChange}

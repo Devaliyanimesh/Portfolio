@@ -1,7 +1,8 @@
 import React from 'react'
-import CallFlowHeader from '../Component/CallFlowHeader'
+import CallFlowHeader from '../../Component/CallFlowHeader'
 import DialpadIcon from '@mui/icons-material/Dialpad';
-import Dropdown from '../Element/Dropdown';
+import Dropdown from '../../Element/Dropdown';
+import { Handle, Position } from '@xyflow/react';
 
 export default function KeyPad() {
     const options = [
@@ -48,6 +49,11 @@ export default function KeyPad() {
                 />
                 <span>the go to next step.</span>
             </div>
+                <Handle
+                    type="target"
+                    position={Position.Top} // ऊपर से incoming edge आएगी
+                    style={{ background: '#1d82ca', width: 10, height: 10 }}
+                  />
         </CallFlowHeader>
     )
 }

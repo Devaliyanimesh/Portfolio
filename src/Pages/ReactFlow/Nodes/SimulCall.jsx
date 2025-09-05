@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 // deskphone
 import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
-import CallFlowHeader from "../Component/CallFlowHeader";
-import Dropdown from "../Element/Dropdown";
+import CallFlowHeader from "../../Component/CallFlowHeader";
+import Dropdown from "../../Element/Dropdown";
 import AddIcon from "@mui/icons-material/Add";
 import CloseIcon from "@mui/icons-material/Close";
+import { Handle, Position } from "@xyflow/react";
 export default function SimulCall() {
   const options = [
     { label: "5", value: 1 },
@@ -89,6 +90,11 @@ export default function SimulCall() {
           <span className="text-sm ml-1">then go to next step.</span>
         </div>
       </div>
+          <Handle
+              type="target"
+              position={Position.Top} // ऊपर से incoming edge आएगी
+              style={{ background: '#1d82ca', width: 10, height: 10 }}
+            />
     </CallFlowHeader>
   );
 }

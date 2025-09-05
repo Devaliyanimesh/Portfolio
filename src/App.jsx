@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 import Router from "../src/Pages/Router/Router";
-
-import LastFlow from "./Pages/ReactFlow/LastFlow";
-
+import CallFlow from "./Pages/ReactFlow/CallFlow";
 
 
 export default function App() {
@@ -13,9 +11,7 @@ export default function App() {
       {/* <BrowserRouter>
         <Router />
       </BrowserRouter> */}
-
-
-      <LastFlow />
+      <CallFlow/>
     </div>
   );
 }

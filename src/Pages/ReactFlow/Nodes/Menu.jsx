@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import AddIcon from "@mui/icons-material/Add";
 import CloseIcon from "@mui/icons-material/Close";
-import CallFlowHeader from "../Component/CallFlowHeader";
-import Dropdown from "../Element/Dropdown";
+import CallFlowHeader from "../../Component/CallFlowHeader";
+import Dropdown from "../../Element/Dropdown";
+import { Handle, Position } from "@xyflow/react";
 
 export default function Menu() {
   const [payload, setPayload] = useState({ menu: { menuText: "" } });
@@ -123,6 +124,11 @@ export default function Menu() {
           <AddIcon className="!text-md text-white ml-1" />
         </button>
       </div>
+          <Handle
+              type="target"
+              position={Position.Top} // ऊपर से incoming edge आएगी
+              style={{ background: '#1d82ca', width: 10, height: 10 }}
+            />
     </CallFlowHeader>
   );
 }

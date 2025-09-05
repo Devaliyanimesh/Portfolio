@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import CallSplitIcon from "@mui/icons-material/CallSplit";
-import CallFlowHeader from "../Component/CallFlowHeader";
-import Input from "../Element/Input";
+import CallFlowHeader from "../../Component/CallFlowHeader";
+import Input from "../../Element/Input";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
-import Dropdown from "../Element/Dropdown";
+import Dropdown from "../../Element/Dropdown";
+import { Handle, Position } from "@xyflow/react";
 
 export default function Forword() {
   const options = [
@@ -42,6 +43,8 @@ export default function Forword() {
       bgColor="#1cb041"
       icon={<CallSplitIcon className="text-white" />}
     >
+
+
       <Input
         iconLeft={<LocalPhoneIcon className="text-black/30" />}
         type="tel"
@@ -68,6 +71,12 @@ export default function Forword() {
         />
         <span>the go to next step.</span>
       </div>
+        <Handle
+        type="target"
+        position={Position.Top} // ऊपर से incoming edge आएगी
+        style={{ background: '#1d82ca', width: 10, height: 10 }}
+      />
+
     </CallFlowHeader>
   );
 }

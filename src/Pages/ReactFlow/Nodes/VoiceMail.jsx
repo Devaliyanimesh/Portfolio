@@ -1,13 +1,14 @@
-import React, { useState } from "react";
-import CallFlowHeader from "../Component/CallFlowHeader";
+import React,{ useState } from "react";
+import CallFlowHeader from "../../Component/CallFlowHeader";
 import VoicemailIcon from "@mui/icons-material/Voicemail";
+import { Handle,Position } from "@xyflow/react";
 
 export default function VoiceMail() {
-      let [payload, setPayload] = useState({
-        voice: {
-         voiceText: "",
-        },
-      });
+  let [payload,setPayload] = useState({
+    voice: {
+      voiceText: "",
+    },
+  });
   return (
     <CallFlowHeader
       title="Voice mail"
@@ -38,6 +39,11 @@ export default function VoiceMail() {
       <div className="flex justify-end text-black/50">
         <span>{payload.voice.voiceText.length}/100</span>
       </div>
+      <Handle
+        type="target"
+        position={Position.Top} // ऊपर से incoming edge आएगी
+        style={{ background: '#1d82ca',width: 10,height: 10 }}
+      />
     </CallFlowHeader>
   );
 }

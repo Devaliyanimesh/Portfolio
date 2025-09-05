@@ -6,6 +6,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import DialpadIcon from "@mui/icons-material/Dialpad";
 import VoicemailIcon from "@mui/icons-material/Voicemail";
 import CallEndIcon from "@mui/icons-material/CallEnd";
+import { Handle, Position } from "@xyflow/react";
 
 export default function LastFlow() {
     let callFlowlist = [
@@ -31,6 +32,11 @@ export default function LastFlow() {
                     <p className="text-sm mt-1">{e.title}</p>
                 </div>
             ))}
+                <Handle
+                    type="target"
+                    position={Position.Top} // ऊपर से incoming edge आएगी
+                    style={{ background: '#1d82ca', width: 10, height: 10 }}
+                  />
         </div>
     );
 }
