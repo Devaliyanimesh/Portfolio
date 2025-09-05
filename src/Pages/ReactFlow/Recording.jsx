@@ -3,11 +3,11 @@ import CallFlowHeader from "../Component/CallFlowHeader";
 import { useState } from "react";
 
 export default function Recording() {
-let  [payload,setPayload]=useState({
-    recoding:{
-        recodingText:""
-    }
-})
+  let [payload, setPayload] = useState({
+    recoding: {
+      recodingText: "",
+    },
+  });
 
   return (
     <CallFlowHeader
@@ -22,6 +22,7 @@ let  [payload,setPayload]=useState({
         maxLength={100}
         name=""
         id=""
+        placeholder="Write the text that you want your caller to listen to."
         rows={4}
         onChange={(e) => {
           setPayload({

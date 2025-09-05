@@ -34,7 +34,7 @@ export default function Dropdown({
   return (
     <div
       ref={dropdownRef}
-      className={`relative inline-block min-w-[120px] ${className}`}
+      className={`relative inline-block  ${className}`}
     >
       {/* Trigger Button */}
       <button

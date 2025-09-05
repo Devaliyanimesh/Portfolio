@@ -8,8 +8,9 @@ import Forword from "./Pages/ReactFlow/Forword";
 import StartCallFlow from "./Pages/ReactFlow/StartCallFlow";
 import CallRecording from "./Pages/ReactFlow/CallRecording";
 import SimulCall from "./Pages/ReactFlow/SimulCall";
-
-
+import Menu from "./Pages/ReactFlow/Menu";
+import VoiceMail from "./Pages/ReactFlow/VoiceMail";
+import HangUp from "./Pages/ReactFlow/HangUp";
 
 // const JavascriptApp = React.lazy(() => import('JavascriptCode/code'));
 // const TerminalApp = React.lazy(() => import('terminal/terminal'));
@@ -26,10 +27,9 @@ export default function App() {
         <Router />
       </BrowserRouter> */}
 
-   
       {/* <Forword/> */}
-<SimulCall/>
-
+      {/* <VoiceMail/> */}
+      <HangUp />
     </div>
   );
 }
