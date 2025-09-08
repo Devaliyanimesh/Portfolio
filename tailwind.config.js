@@ -14,7 +14,8 @@ export default {
         accent: "#ffffff",
         black: "#000000",
         info:"#9C998E",
-        error:"#ef4444"
+        error:"#ef4444",
+        callInfo:"#1d82ca"
       },
     },
   },

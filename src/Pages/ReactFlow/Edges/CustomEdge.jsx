@@ -10,7 +10,7 @@ export function CustomEdge({ id,sourceX,sourceY,targetX,targetY }) {
         d={edgePath}
         fill="none"
         stroke="#1d82ca"
-        strokeWidth={2}
+        strokeWidth={3}
         markerEnd="url(#arrowhead)"
       />
       <defs>
