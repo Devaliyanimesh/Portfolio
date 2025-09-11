@@ -29,6 +29,12 @@ export default function SimulCall() {
       bgColor="#18bea0"
       icon={<ConnectWithoutContactIcon className="text-white" />}
     >
+        <Handle
+        type="source"
+        position={Position.Bottom} // ऊपर से incoming edge आएगी
+        style={{ background: '#1d82ca',width: 10,height: 10 }}
+      />
+
       <div className="text-base font-normal mb-2">Forward call to</div>
 
       {/* Input + Dropdown */}

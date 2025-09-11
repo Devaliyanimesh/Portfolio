@@ -24,6 +24,12 @@ export default function KeyPad() {
             onClose={() => alert("Closed!")}
             icon={<DialpadIcon className="text-white" />}
         >
+              <Handle
+        type="source"
+        position={Position.Bottom} // ऊपर से incoming edge आएगी
+        style={{ background: '#1d82ca',width: 10,height: 10 }}
+      />
+
             <input
                 type="text"
                 id="name"

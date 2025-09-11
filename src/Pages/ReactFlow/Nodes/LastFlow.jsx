@@ -124,7 +124,7 @@ export default function LastFlow() {
 
     // create new edge (new node → lastnode)
     const lastedgeFix = {
-      id: createnode.id+"king",
+      id: createnode.id + "king",
       source: createnode.id,
       target: "lastnode",
       type: "custom-edge",
@@ -139,9 +139,9 @@ export default function LastFlow() {
 
     // update state
     setNode(newNodes);
-    console.log("Hii ~ LastFlow.jsx ~ nodeAddFun ~ newNodes:", newNodes)
+    console.log("Hii ~ LastFlow.jsx ~ nodeAddFun ~ newNodes:", newNodes);
     setEdges(newEdges);
-    console.log("Hii ~ LastFlow.jsx ~ nodeAddFun ~ newEdges:", newEdges)
+    console.log("Hii ~ LastFlow.jsx ~ nodeAddFun ~ newEdges:", newEdges);
   }
 
   return (

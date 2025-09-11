@@ -18,7 +18,12 @@ export default function Greeting() {
       onClose={() => alert("Closed!")}
       icon={<DraftsIcon className="text-white" />}
     >
-   
+     <Handle
+        type="source"
+        position={Position.Bottom} // ऊपर से incoming edge आएगी
+        style={{ background: '#1d82ca',width: 10,height: 10 }}
+      />
+
 
 
       <textarea

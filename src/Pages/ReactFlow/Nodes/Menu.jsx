@@ -64,6 +64,12 @@ export default function Menu() {
       onClose={() => alert("Closed!")}
       icon={<MenuIcon className="text-white" />}
     >
+        <Handle
+        type="source"
+        position={Position.Bottom} // ऊपर से incoming edge आएगी
+        style={{ background: '#1d82ca',width: 10,height: 10 }}
+      />
+
       <textarea
         className="border w-full focus:outline-none rounded-md resize-none p-2"
         maxLength={100}
