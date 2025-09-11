@@ -11,7 +11,7 @@ export default function CallFlowHeader({
   children,
 }) {
   return (
-    <div className="relative flex justify-center mt-9">
+    <div className="relative flex justify-center mt-9" >
       <div className="w-[550px] min-w-[350px] bg-white rounded-lg shadow-xl border border-gray-200 p-4">
         {/* floating icon */}
         <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-10">

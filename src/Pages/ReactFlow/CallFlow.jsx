@@ -1,10 +1,9 @@
-import { useState, useCallback, useContext, useEffect } from "react";
+import { useContext, useCallback, useEffect } from "react";
 import {
   ReactFlow,
   ReactFlowProvider,
   applyNodeChanges,
   applyEdgeChanges,
-  addEdge,
   Background,
   Controls,
   MiniMap,
@@ -25,66 +24,27 @@ import StartCallFlow from "./Nodes/StartCallFlow";
 import LastFlow from "./Nodes/LastFlow";
 import Recording from "./Nodes/Recording";
 
-const initialNodes = [
-  {
-    id: "n1",
-    type: "StartCallFlow",
-    position: { x: 100, y: 0 },
-    data: { value: "Node 1" },
-  },
-  {
-    id: "n2",
-    type: "CallRecording",
-    position: { x: 100, y: 100 },
-    data: { value: "Node 2" },
-  },
-  {
-    id: "n3",
-    type: "Recording",
-    position: { x: 100, y: 200 },
-    data: { value: "Node 3" },
-  },
-  {
-    id: "n4",
-    type: "LastFlow",
-    position: { x: 15, y: 600 },
-    data: { value: "Node 4" },
-  },
-];
-
-
-const initialEdges = [
-  { id: "e1-2", source: "n1", target: "n2", type: "custom-edge" },
-  { id: "e2-3", source: "n2", target: "n3", type: "custom-edge" },
-  // { id: "e3-4", source: "n3", target: "n4", type: "custom-edge" },
-  // { id: "e3-4", source: "n4", target: "n5", type: "custom-edge" },
-];
-
-console.log(initialEdges,initialNodes)
 const edgeTypes = {
   "custom-edge": CustomEdge,
 };
 
 function FlowContent() {
-  const { user, setUser } = useContext(MyContext);
+  const { node, setNode, edge, setEdges } = useContext(MyContext);
 
-  const [nodes, setNodes] = useState(initialNodes);
-  const [edges, setEdges] = useState(initialEdges);
+  useEffect(() => {
+    console.log("Nodes changed:", node);
+  }, [node]);
 
+  // 🟢 when ReactFlow changes nodes (drag, resize, delete etc.)
   const onNodesChange = useCallback(
-    (changes) => setNodes((nds) => applyNodeChanges(changes, nds)),
-    []
+    (changes) => setNode((nds) => applyNodeChanges(changes, nds)),
+    [setNode]
   );
 
+  // 🟢 when ReactFlow changes edges
   const onEdgesChange = useCallback(
     (changes) => setEdges((eds) => applyEdgeChanges(changes, eds)),
-    []
-  );
-
-  const onConnect = useCallback(
-    (params) =>
-      setEdges((eds) => addEdge({ ...params, type: "custom-edge" }, eds)),
-    []
+    [setEdges]
   );
 
   const nodeTypes = {
@@ -103,15 +63,14 @@ function FlowContent() {
 
   return (
     <ReactFlow
-      nodes={nodes}
-      edges={edges}
+      nodes={node}
+      edges={edge}
       edgeTypes={edgeTypes}
       nodeTypes={nodeTypes}
-      onNodesChange={onNodesChange}
-      onEdgesChange={onEdgesChange}
-      onConnect={onConnect}
+      onNodesChange={onNodesChange}   // 🟢 ADD THIS
+      onEdgesChange={onEdgesChange}   // 🟢 ADD THIS
       fitView
-      nodesDraggable={false} // <-- globally non-draggable
+      nodesDraggable={true} // <-- ab drag hoga & context update hoga
     >
       <Background />
       <Controls />
@@ -122,9 +81,7 @@ function FlowContent() {
 
 export default function CallFlow() {
   return (
-    <div
-      style={{ width: "100vw", height: "100vh", backgroundColor: "#f5f4f5" }}
-    >
+    <div style={{ width: "100vw", height: "100vh", backgroundColor: "#f5f4f5" }}>
       <ReactFlowProvider>
         <FlowContent />
       </ReactFlowProvider>
