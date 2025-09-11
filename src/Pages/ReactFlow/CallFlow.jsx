@@ -33,6 +33,8 @@ function FlowContent() {
 
   useEffect(() => {
     console.log("Nodes changed:", node);
+  console.log("Hii ~ CallFlow.jsx ~ FlowContent ~ edge:", edge)
+
   }, [node]);
 
   // 🟢 when ReactFlow changes nodes (drag, resize, delete etc.)

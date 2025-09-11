@@ -37,6 +37,12 @@ export default function ContextApi({ children }) {
     {
       id: "e2-3",
       source: "recordingEnable",
+      target: "recordingtext",
+      type: "custom-edge",
+    },
+    {
+      id: "e3-4",
+      source: "recordingtext",
       target: "lastnode",
       type: "custom-edge",
     },
