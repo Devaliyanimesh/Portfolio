@@ -31,19 +31,11 @@ const edgeTypes = {
 function FlowContent() {
   const { node, setNode, edge, setEdges } = useContext(MyContext);
 
-  useEffect(() => {
-    console.log("Nodes changed:", node);
-  console.log("Hii ~ CallFlow.jsx ~ FlowContent ~ edge:", edge)
-
-  }, [node]);
-
-  // 🟢 when ReactFlow changes nodes (drag, resize, delete etc.)
   const onNodesChange = useCallback(
     (changes) => setNode((nds) => applyNodeChanges(changes, nds)),
     [setNode]
   );
 
-  // 🟢 when ReactFlow changes edges
   const onEdgesChange = useCallback(
     (changes) => setEdges((eds) => applyEdgeChanges(changes, eds)),
     [setEdges]
@@ -69,10 +61,10 @@ function FlowContent() {
       edges={edge}
       edgeTypes={edgeTypes}
       nodeTypes={nodeTypes}
-      onNodesChange={onNodesChange}   // 🟢 ADD THIS
-      onEdgesChange={onEdgesChange}   // 🟢 ADD THIS
+      onNodesChange={onNodesChange}
+      onEdgesChange={onEdgesChange}
       fitView
-      nodesDraggable={true} // <-- ab drag hoga & context update hoga
+      nodesDraggable={true}
     >
       <Background />
       <Controls />
@@ -83,7 +75,9 @@ function FlowContent() {
 
 export default function CallFlow() {
   return (
-    <div style={{ width: "100vw", height: "100vh", backgroundColor: "#f5f4f5" }}>
+    <div
+      style={{ width: "100vw", height: "100vh", backgroundColor: "#f5f4f5" }}
+    >
       <ReactFlowProvider>
         <FlowContent />
       </ReactFlowProvider>

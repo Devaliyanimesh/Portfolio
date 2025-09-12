@@ -1,10 +1,10 @@
-import React,{ useState } from "react";
+import React, { useState } from "react";
 import CallFlowHeader from "../../Component/CallFlowHeader";
 import VoicemailIcon from "@mui/icons-material/Voicemail";
-import { Handle,Position } from "@xyflow/react";
+import { Handle, Position } from "@xyflow/react";
 
-export default function VoiceMail() {
-  let [payload,setPayload] = useState({
+export default function VoiceMail({id}) {
+  let [payload, setPayload] = useState({
     voice: {
       voiceText: "",
     },
@@ -18,6 +18,7 @@ export default function VoiceMail() {
       onClose={() => alert("Closed!")}
       bgColor="#ca7a1e"
       icon={<VoicemailIcon className="text-white" />}
+      id={id}
     >
       <textarea
         className="border w-full focus:outline-0 rounded-md resize-none p-2"

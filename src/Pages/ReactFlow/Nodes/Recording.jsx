@@ -3,7 +3,7 @@ import CallFlowHeader from "../../Component/CallFlowHeader";
 import { useState } from "react";
 import { Handle, Position } from "@xyflow/react";
 
-export default function Recording() {
+export default function Recording({ id }) {
   let [payload, setPayload] = useState({
     recoding: {
       recodingText: "",
@@ -14,9 +14,10 @@ export default function Recording() {
     <CallFlowHeader
       title="Recording"
       subtitle="Read the message for the caller"
-      showClose
+      showClose={false}
       onClose={() => alert("Closed!")}
       icon={<RecordVoiceOverIcon className="text-white" />}
+      id={id}
     >
       <Handle
         type="source"

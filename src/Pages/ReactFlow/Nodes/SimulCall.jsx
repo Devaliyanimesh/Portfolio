@@ -6,7 +6,7 @@ import Dropdown from "../../Element/Dropdown";
 import AddIcon from "@mui/icons-material/Add";
 import CloseIcon from "@mui/icons-material/Close";
 import { Handle, Position } from "@xyflow/react";
-export default function SimulCall() {
+export default function SimulCall({id}) {
   const options = [
     { label: "5", value: 1 },
     { label: "10", value: 2 },
@@ -28,6 +28,8 @@ export default function SimulCall() {
       onClose={() => alert("Closed!")}
       bgColor="#18bea0"
       icon={<ConnectWithoutContactIcon className="text-white" />}
+      id={id}
+
     >
         <Handle
         type="source"

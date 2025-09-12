@@ -6,7 +6,7 @@ import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import Dropdown from "../../Element/Dropdown";
 import { Handle, Position } from "@xyflow/react";
 
-export default function Forword() {
+export default function Forword({ id }) {
   const options = [
     { label: "5", value: 1 },
     { label: "10", value: 2 },
@@ -42,6 +42,7 @@ export default function Forword() {
       onClose={() => alert("Closed!")}
       bgColor="#1cb041"
       icon={<CallSplitIcon className="text-white" />}
+      id={id}
     >
   <Handle
         type="source"

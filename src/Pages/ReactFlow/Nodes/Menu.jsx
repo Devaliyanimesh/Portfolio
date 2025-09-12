@@ -6,7 +6,7 @@ import CallFlowHeader from "../../Component/CallFlowHeader";
 import Dropdown from "../../Element/Dropdown";
 import { Handle, Position } from "@xyflow/react";
 
-export default function Menu() {
+export default function Menu({id}) {
   const [payload, setPayload] = useState({ menu: { menuText: "" } });
 
   const numberTypeArray = [
@@ -63,6 +63,8 @@ export default function Menu() {
       showClose
       onClose={() => alert("Closed!")}
       icon={<MenuIcon className="text-white" />}
+      id={id}
+
     >
         <Handle
         type="source"

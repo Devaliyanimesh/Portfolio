@@ -9,21 +9,26 @@ export default function ContextApi({ children }) {
       id: "start",
       type: "StartCallFlow",
       position: { x: 100, y: 0 },
+      draggable: false,
     },
     {
       id: "recordingEnable",
       type: "CallRecording",
       position: { x: 100, y: 100 },
+      draggable: false,
     },
     {
       id: "recordingtext",
       type: "Recording",
       position: { x: 100, y: 250 },
+      measured: { width: 550, height: 280 },
+      draggable: false,
     },
     {
       id: "lastnode",
       type: "LastFlow",
       position: { x: 15, y: 800 },
+      draggable: false,
     },
   ]);
 

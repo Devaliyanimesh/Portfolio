@@ -3,7 +3,7 @@ import CallFlowHeader from "../../Component/CallFlowHeader";
 import CallEndIcon from "@mui/icons-material/CallEnd";
 import { Handle, Position } from "@xyflow/react";
 
-export default function HangUp() {
+export default function HangUp({id}) {
   return (
     <CallFlowHeader
       title="Hung up"
@@ -13,6 +13,7 @@ about call recording."
       onClose={() => alert("Closed!")}
       bgColor="#e93c15"
       icon={<CallEndIcon className="text-white" />}
+      id={id}
     >
           <Handle
               type="target"
