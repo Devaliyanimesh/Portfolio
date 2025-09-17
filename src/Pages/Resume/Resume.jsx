@@ -37,7 +37,7 @@ export default function Resume() {
     },
     {
       icon: <LaptopMacIcon className="text-blue-500" fontSize="medium" />,
-      title: 'Frontend Developer (2024–Present)',
+      title: 'Frontend Developer   (2024–Present)',
       paragraph: 'MediaNV',
     },
   ]
@@ -52,15 +52,19 @@ export default function Resume() {
   ]
 
   const libarySkill = [
-    'Reactjs',
-    'HTML 5',
-    'CSS 3',
-    'Tailwind CSS',
+    'HTML',
+    'CSS',
     'JavaScript',
-    'Git',
-    "nest.js",
-    "Svelte js",
+    'Tailwind CSS',
     "Bootstrap",
+    'Reactjs',
+    "Svelte js",
+    "nest.js",
+    "Graph ql",
+    'Git',
+    "Gitlab",
+
+
 
 
   ]
