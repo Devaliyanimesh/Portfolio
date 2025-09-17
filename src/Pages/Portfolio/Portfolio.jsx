@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState,useEffect } from "react";
 
 const portfolioItems = [
   {
@@ -9,14 +9,15 @@ const portfolioItems = [
 ];
 
 const Portfolio = () => {
-  const navigate = useNavigate();
-  const [loading, setLoading] = useState(true);
+  let navigate = useNavigate()
+  const [loading,setLoading] = useState(true);
+
 
   // Simulate loading
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1000); // 1s loading
+    const timer = setTimeout(() => setLoading(false),1000); // 1s loading
     return () => clearTimeout(timer);
-  }, []);
+  },[]);
 
   return (
     <div className="flex flex-col gap-5">
@@ -27,7 +28,7 @@ const Portfolio = () => {
 
       {/* Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {portfolioItems.map((item, index) => (
+        {portfolioItems.map((item,index) => (
           <div
             key={index}
             className="bg-accent rounded-lg shadow-md overflow-hidden"
@@ -40,7 +41,7 @@ const Portfolio = () => {
                 src={item.image}
                 alt={item.title}
                 className="h-48 w-full cursor-pointer"
-                onClick={() => navigate("/callFlow")}
+                onClick={() => navigate("/callflow")}
               />
             )}
             <div className="p-2">

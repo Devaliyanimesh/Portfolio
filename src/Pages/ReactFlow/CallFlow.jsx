@@ -1,4 +1,4 @@
-import { useContext, useCallback, useEffect } from "react";
+import { useContext,useCallback } from "react";
 import {
   ReactFlow,
   ReactFlowProvider,
@@ -23,21 +23,22 @@ import CallRecording from "./Nodes/CallRecording";
 import StartCallFlow from "./Nodes/StartCallFlow";
 import LastFlow from "./Nodes/LastFlow";
 import Recording from "./Nodes/Recording";
+import { useNavigate } from "react-router-dom";
 
 const edgeTypes = {
   "custom-edge": CustomEdge,
 };
 
 function FlowContent() {
-  const { node, setNode, edge, setEdges } = useContext(MyContext);
+  const { node,setNode,edge,setEdges } = useContext(MyContext);
 
   const onNodesChange = useCallback(
-    (changes) => setNode((nds) => applyNodeChanges(changes, nds)),
+    (changes) => setNode((nds) => applyNodeChanges(changes,nds)),
     [setNode]
   );
 
   const onEdgesChange = useCallback(
-    (changes) => setEdges((eds) => applyEdgeChanges(changes, eds)),
+    (changes) => setEdges((eds) => applyEdgeChanges(changes,eds)),
     [setEdges]
   );
 
@@ -74,10 +75,16 @@ function FlowContent() {
 }
 
 export default function CallFlow() {
+  let navigate = useNavigate()
+
   return (
     <div
-      style={{ width: "100vw", height: "100vh", backgroundColor: "#f5f4f5" }}
+      style={{ width: "100vw",height: "100vh",backgroundColor: "#f5f4f5" }}
+      className="relative"
     >
+      <div className=" absolute cursor-pointer z-[99] right-4 top-2 bg-info text-accent px-6 py-3  text-center font-medium  w-fit rounded-lg " onClick={() => navigate("/project")}>
+        Return
+      </div>
       <ReactFlowProvider>
         <FlowContent />
       </ReactFlowProvider>
